@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir posição - InvestVision IA</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        p {
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #ef4444;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secundario {
+            background: #334155;
+            color: #f8fafc;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Excluir posição</h1>
+
+        <p>
+            Tem certeza que deseja excluir
+            <strong>{{ posicao.ativo.codigo }}</strong>
+            da sua carteira?
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn">Sim, excluir</button>
+            <a href="{% url 'listar_carteira' %}" class="btn btn-secundario">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

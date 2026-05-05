@@ -1,0 +1,39 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+
+<style>
+    .dashboard-premium-btn {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 9999;
+
+        background: linear-gradient(135deg, #38bdf8, #6366f1);
+        color: white !important;
+
+        padding: 14px 20px;
+        border-radius: 999px;
+
+        text-decoration: none !important;
+        font-weight: bold;
+        font-size: 14px;
+
+        box-shadow: 0 0 25px rgba(56,189,248,0.65);
+        transition: all 0.25s ease;
+    }
+
+    .dashboard-premium-btn:hover {
+        transform: translateY(-4px) scale(1.04);
+        box-shadow: 0 0 35px rgba(56,189,248,0.95);
+    }
+</style>
+{% endblock %}
+
+{% block branding %}
+{{ block.super }}
+<a href="/analises/dashboard/" class="dashboard-premium-btn">
+    ← Voltar ao Dashboard
+</a>
+{% endblock %}
